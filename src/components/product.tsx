@@ -21,7 +21,7 @@ export function Product(props: ProductProps) {
 
             {details && <h2 className="prodsDesc">
                 {props.product.description}
-                <p>Rate: <span style={{fontWeight: 'bold'}}>{props.product.rating.rate}</span></p>
+                <p>Rate: <span style={{fontWeight: 'bold'}}>{props.product?.rating?.rate}</span></p>
             </h2>
             }
         </div>

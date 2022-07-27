@@ -6,6 +6,10 @@ export  function useProducts() {
     const [products, setProducts] = useState<IProduct[]>([])
     const [loading, setLoading] = useState(false)
 
+    function addProduct(product: IProduct) {
+        setProducts(prev => [...prev, product])
+    }
+
     async function fetchProducts() {
         setLoading(true)
         const response = await axios.get<IProduct[]>('https://fakestoreapi.com/products?limit=5')
@@ -17,5 +21,5 @@ export  function useProducts() {
         fetchProducts()
     }, [])
 
-    return {products, loading}
+    return {products, loading, addProduct}
 }
